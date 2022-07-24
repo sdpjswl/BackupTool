@@ -12,13 +12,13 @@ echo ******** TALLY BACKUP TOOL ********
 :: Generate file name using current date
 :: https://stackoverflow.com/a/44023788
 
-for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y-%%x-%%z
+for /f "tokens=1,2,3 delims=/- " %%x in ("%date%") do set d=%%x-%%y-%%z
 set "mo=%d:~3,2%"
 if "%mo:~0,1%"=="0" set "mo=%mo:~1%"
 set names=JanFebMarAprMayJunJulAugSepOctNovDec
 set /a "pos=3*%mo%"-3
 set "ti=!names:~%pos%,3!"
-for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set string=%%y-%ti%-%%z
+for /f "tokens=1,2,3 delims=/- " %%x in ("%date%") do set string=%%x-%ti%-%%z
 
 :: Zip data and save to temp folder
 :: https://stackoverflow.com/a/64475079
