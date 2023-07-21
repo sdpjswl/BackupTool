@@ -1,6 +1,6 @@
-# TallyBackupTool
+# BackupTool
 
-Batch file to backup Tally data to Google Drive
+Batch file to backup Axon and Tally data to Google Drive
 
 # To-do
 
